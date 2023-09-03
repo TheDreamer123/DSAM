@@ -1,19 +1,28 @@
 # Argument Manager
 A simple one-file Rust library for better management of program arguments.
 
-# How does it work?
-**It is a bit hard to explain so I made a simple example for you to have a base:**
+# What does it allow me to do?
+**This library allows you to:**
+- **Define how many arguments the command will have**
+- **Define range-based arguments**
+- **Define the name of the command**
+- **Easily obtain an argument from it's index**
 
+# What are range-based arguments?
+**To put it simply, the amount of arguments a command can have becomes a range, which reduces the amount of code required to define commands with many arguments.**
+
+# Example
 ```rust
 mod arg_manager;
 use arg_manager::*;
 
 fn main() {
     let mut commands: Vec<Command> = Vec::new();
-    commands.push(Command::new("command1",vec![1],false));
+    commands.push(Command::new("command1",vec![1],false)); 
     commands.push(Command::new("command2",vec![1,2],false));
     commands.push(Command::new("command3",vec![0],false));
-    commands.push(Command::new("command4",vec![1,5,6],true));
+    // The true makes this a range-based argument. This command will be able to have between 1 and 5 (inclusive) arguments.
+    commands.push(Command::new("command4",vec![1,5],true));
 
     let manager = ArgumentManager::new(commands);
 
