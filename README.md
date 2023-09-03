@@ -21,7 +21,8 @@ fn main() {
     commands.push(Command::new("command1",vec![1],false)); 
     commands.push(Command::new("command2",vec![1,2],false));
     commands.push(Command::new("command3",vec![0],false));
-    // The true makes this a range-based argument. This command will be able to have between 1 and 5 (inclusive) arguments.
+    // The true makes this a range-based argument.
+    // This command will be able to have between 1 and 5 (inclusive) arguments.
     commands.push(Command::new("command4",vec![1,5],true));
 
     let manager = ArgumentManager::new(commands);
