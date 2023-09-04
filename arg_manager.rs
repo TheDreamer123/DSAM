@@ -55,7 +55,7 @@ impl ArgumentManager {
 
         let command_name = self.args[1].clone();
         let command = Command::get_command(&self.commands,command_name);
-        let arg_count = self.args.len() - 2;
+        let arg_count = self.argument_count();
 
         if command.range {
             for i in (0..command.argc.len()).step_by(2) {
@@ -70,4 +70,6 @@ impl ArgumentManager {
 
         self.args[index + 1].clone()
     }
+
+    pub fn argument_count(&self) -> usize { self.args.len() - 2 }
 }
