@@ -1,20 +1,20 @@
-# Argument Manager
-A simple one-file Rust library for better management of program arguments.
+# Dreamer's Simple Argument Manager
+**Giant if conditions for your arguments are now a thing of the past!**
 
-# What does it allow me to do?
+## What does it allow me to do?
 **This library allows you to:**
 - **Define how many arguments the command will have**
 - **Define range-based arguments**
 - **Define the name of the command**
 - **Easily obtain an argument from it's index**
 
-# What are range-based arguments?
+## What are range-based arguments?
 **To put it simply, the amount of arguments a command can have becomes a range, which reduces the amount of code required to define commands with many arguments.**
 
-# How do I install this library?
+## How do I install this library?
 **Simple! Just download the provided `arg_manager.rs` file and add it to your `src` folder.**
 
-# Example
+## Example
 ```rust
 mod arg_manager;
 use arg_manager::*;
