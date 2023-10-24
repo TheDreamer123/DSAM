@@ -22,12 +22,12 @@
 use dsam::*;
 
 fn main() {
-    // WARNING: Make sure when creating the vector, it is a vector of arg_manager::Command.
+    // WARNING: Make sure that when creating the vector it is a vector of dsam::Command.
     let mut commands: Vec<Command> = Vec::new();
     // These first 3 are not range-based.
-    commands.push(Command::new("command1",vec![1],false)); 
-    commands.push(Command::new("command2",vec![1,2],false));
-    commands.push(Command::new("command3",vec![0],false));
+    commands.push(Command::new("command1", vec![1],false)); 
+    commands.push(Command::new("command2", vec![1,2],false));
+    commands.push(Command::new("command3", vec![0],false));
     // The true makes this a range-based argument.
     // This command will be able to have between 1 and 5 (inclusive) arguments.
     commands.push(Command::new("command4",vec![1,5],true));
