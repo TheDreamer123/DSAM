@@ -1,8 +1,9 @@
-# Dreamer's Simple Argument Manager
-**Giant if conditions for your arguments are now a thing of the past!**
+# DSAM
+**Dreamer's Simple Argument Manager (DSAM, for short) is a simplistic crate that provides a better experience when dealing with command line arguments.**
+
+**It provides a set of functions that allow to better deal with these arguments, as well as make it easy to add new commands and use them.**
 
 ## What does it allow me to do?
-**This library allows you to:**
 - **Define how many arguments the command will have**
 - **Define range-based arguments**
 - **Define the name of the command**
@@ -11,13 +12,14 @@
 ## What are range-based arguments?
 **To put it simply, the amount of arguments a command can have becomes a range, which reduces the amount of code required to define commands with many arguments.**
 
-## How do I install this library?
-**Simple! Just download the provided `arg_manager.rs` file and add it to your `src` folder.**
+## How do I install this crate?
+**Open your `Cargo.toml` file and add the following line under `[dependencies]`:**
+```toml
+```
 
 ## Example
 ```rust
-mod arg_manager;
-use arg_manager::*;
+use dsam::*;
 
 fn main() {
     // WARNING: Make sure when creating the vector, it is a vector of arg_manager::Command.
