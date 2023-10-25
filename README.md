@@ -25,9 +25,9 @@ fn main() {
     // WARNING: Make sure that when creating the vector it is a vector of dsam::Command.
     let mut commands: Vec<Command> = Vec::new();
     // These first 3 are not range-based.
-    commands.push(Command::new("command1",  vec![1], false)); 
-    commands.push(Command::new("command2",  vec![1, 2], false));
-    commands.push(Command::new("command3",  vec![0], false));
+    commands.push(Command::new("command1", vec![1], false)); 
+    commands.push(Command::new("command2", vec![1, 2], false));
+    commands.push(Command::new("command3", vec![0], false));
     // The true makes this a range-based argument.
     // This command will be able to have between 1 and 5 (inclusive) arguments.
     commands.push(Command::new("command4", vec![1, 5], true));
@@ -45,11 +45,21 @@ fn main() {
 
     // Uses a match to decide what to do with each command.
     match command.as_str() {
-        "command1" => { println!("Command 1 executed."); }
-        "command2" => { println!("Command 2 executed."); }
-        "command3" => { println!("Command 3 executed."); }
-        "command4" => { println!("Command 4 executed."); }
-        &_ => { panic!("Unknown command."); }
+        "command1" => {
+            println!("Command 1 executed.");
+        }
+        "command2" => {
+            println!("Command 2 executed.");
+        }
+        "command3" => {
+            println!("Command 3 executed.");
+        }
+        "command4" => {
+            println!("Command 4 executed.");
+        }
+        &_ => {
+            panic!("Unknown command.");
+        }
     }
 }
 ```
