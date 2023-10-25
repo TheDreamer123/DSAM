@@ -25,18 +25,20 @@ fn main() {
     // WARNING: Make sure that when creating the vector it is a vector of dsam::Command.
     let mut commands: Vec<Command> = Vec::new();
     // These first 3 are not range-based.
-    commands.push(Command::new("command1", vec![1],false)); 
-    commands.push(Command::new("command2", vec![1,2],false));
-    commands.push(Command::new("command3", vec![0],false));
+    commands.push(Command::new("command1",  vec![1], false)); 
+    commands.push(Command::new("command2",  vec![1, 2], false));
+    commands.push(Command::new("command3",  vec![0], false));
     // The true makes this a range-based argument.
     // This command will be able to have between 1 and 5 (inclusive) arguments.
-    commands.push(Command::new("command4",vec![1,5],true));
+    commands.push(Command::new("command4", vec![1, 5], true));
 
     // Initialize an instance of the manager with the given commands.
     let manager = ArgumentManager::new(commands);
 
     // Check if the current command is valid (the library fetches it from std::env::args()), stopping the program if not.
-    if !manager.is_command_valid() { panic!("Either the command is invalid or the amount of arguments is invalid."); }
+    if !manager.is_command_valid() {
+        panic!("Either the command is invalid or the amount of arguments is invalid.");
+    }
 
     // Fetches the name of the command (0 for the command, 1 and beyond for the arguments).
     let command: &String = &manager.get_element(0);
